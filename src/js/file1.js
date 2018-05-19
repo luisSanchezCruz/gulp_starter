@@ -1,0 +1,1 @@
+alert('this alert is from file1.js');
