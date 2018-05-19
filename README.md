@@ -1,4 +1,4 @@
-#GULP_STARTER
+# GULP_STARTER
 
 here we have a gulp enviroment ready for work 
 
