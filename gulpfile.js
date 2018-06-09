@@ -38,18 +38,31 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
+//for css
+gulp.task('css', function() {
+    gulp.src('./src/css/*.css')
+        .pipe(gulp.dest('dist/css'));
+});
+
+//for wefonts
+gulp.task('webfonts', function() {
+    gulp.src('./src/webfonts/*')
+        .pipe(gulp.dest('dist/webfonts'));
+});
+
 //display a console message
 gulp.task('message', function() {
     return console.log('Building your site!');
 });
 
 //execute all task
-gulp.task('default', ['message', 'copyHtml' , 'imagemin', 'scripts', 'sass']);
+gulp.task('default', ['message', 'copyHtml' , 'imagemin', 'scripts', 'sass', 'css', 'webfonts']);
 
 
 //watch for changes
 gulp.task('watch',function() {
     gulp.watch('src/*.html',['copyHtml']);
+    gulp.watch('src/sass/partials/*.scss',['sass']);
     gulp.watch('src/sass/*.scss',['sass']);
     gulp.watch('src/js/*.js',['scripts']);
     gulp.watch('src/images/*',['imagemin']);
